@@ -1,5 +1,6 @@
 //debugging
 "use strict";
+let winner = "computer";
 
 //start game
 function start() {
@@ -24,6 +25,13 @@ function showAnimations() {
 //determine the winner
 function whoWon() {
   console.log("whoWon");
+  if (winner == "computer") {
+    showLose();
+  } else if (winner == "user") {
+    showLose();
+  } else {
+    showDraw();
+  }
 }
 
 //go to the winner screen
