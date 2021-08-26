@@ -65,18 +65,47 @@ function showAnimations() {
 
 //determine the winner
 function whoWon() {
+  document.querySelector("#player1").classList.remove("shake");
+  document.querySelector("#player2").classList.remove("shake");
   if (userChoice == "rock" && computerChoice == "scissors") {
     winner = "user";
+    document.querySelector("#player2").classList.remove("rock");
+    document.querySelector("#player2").classList.add("scissors");
   } else if (userChoice == "rock" && computerChoice == "paper") {
     winner = "computer";
+    document.querySelector("#player1").classList.remove("rock");
+    document.querySelector("#player2").classList.remove("rock");
+    document.querySelector("#player2").classList.add("paper");
   } else if (userChoice == "paper" && computerChoice == "scissors") {
     winner = "computer";
+    document.querySelector("#player1").classList.remove("rock");
+    document.querySelector("#player1").classList.add("paper");
+    document.querySelector("#player2").classList.remove("rock");
+    document.querySelector("#player2").classList.add("scissors");
   } else if (userChoice == "paper" && computerChoice == "rock") {
     winner = "user";
+    document.querySelector("#player1").classList.remove("rock");
+    document.querySelector("#player1").classList.add("paper");
   } else if (userChoice == "scissors" && computerChoice == "paper") {
     winner = "user";
+    document.querySelector("#player1").classList.remove("rock");
+    document.querySelector("#player1").classList.add("scissors");
+    document.querySelector("#player2").classList.remove("rock");
+    document.querySelector("#player2").classList.add("paper");
   } else if (userChoice == "scissors" && computerChoice == "rock") {
     winner = "computer";
+    document.querySelector("#player1").classList.remove("rock");
+    document.querySelector("#player1").classList.add("scissors");
+  } else if (userChoice == "paper" && computerChoice == "paper") {
+    document.querySelector("#player1").classList.remove("rock");
+    document.querySelector("#player1").classList.add("paper");
+    document.querySelector("#player2").classList.remove("rock");
+    document.querySelector("#player2").classList.add("paper");
+  } else if (userChoice == "scissors" && computerChoice == "scissors") {
+    document.querySelector("#player1").classList.remove("rock");
+    document.querySelector("#player1").classList.add("scissors");
+    document.querySelector("#player2").classList.remove("rock");
+    document.querySelector("#player2").classList.add("scissors");
   }
   showEndScreen();
 }
