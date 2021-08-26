@@ -96,14 +96,17 @@ function showEndScreen() {
 //go to the winner screen
 function showWin() {
   console.log("showWin()");
+  document.querySelector("#win").classList.remove("hidden");
 }
 
 //got to the losing screen
 function showLose() {
   console.log("showLose()");
+  document.querySelector("#lose").classList.remove("hidden");
 }
 
 //go to the draw screen
 function showDraw() {
   console.log("showDraw()");
+  document.querySelector("#draw").classList.remove("hidden");
 }
