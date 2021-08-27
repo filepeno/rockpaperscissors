@@ -4,13 +4,16 @@ let winner;
 const choices = ["rock", "paper", "scissors"];
 let userChoice;
 let computerChoice;
-let randomNum = 1;
+let randomNum;
 
 window.addEventListener("load", start);
 
 //start game
 function start() {
   console.log("start()");
+  //add classes
+  document.querySelector(".restart-btn").classList.add("hidden");
+  document.querySelector("#player1").classList.add("rock");
   //start animation
   showAnimations();
   getPlayerChoice();
@@ -23,13 +26,14 @@ function getPlayerChoice() {
   randomNum = Math.floor(Math.random() * 3);
   userChoice = choices[randomNum];
   console.log("If not clicked, user choice is " + userChoice);
-  document.querySelector("button.rock").addEventListener("click", clickedRock);
-  //   document.querySelector("button.scissors").addEventListener("click", getPlayerChoice);
-  //   document.querySelector("button.paper").addEventListener("click", getPlayerChoice);
+  document.querySelector("button.rock").addEventListener("click", clickedSth);
+  document.querySelector("button.paper").addEventListener("click", clickedSth);
+  document.querySelector("button.scissors").addEventListener("click", clickedSth);
 }
-function clickedRock() {
-  console.log("clickedRock()");
-  //   userChoice = this.classList.value;
+
+function clickedSth() {
+  console.log("clickedSth()");
+  userChoice = this.classList.value;
   console.log("User chose " + userChoice);
 }
 
@@ -126,16 +130,34 @@ function showEndScreen() {
 function showWin() {
   console.log("showWin()");
   document.querySelector("#win").classList.remove("hidden");
+  document.querySelector(".restart-btn").classList.remove("hidden");
+  document.querySelector(".restart-btn").addEventListener("click", restartGame);
 }
 
 //got to the losing screen
 function showLose() {
   console.log("showLose()");
   document.querySelector("#lose").classList.remove("hidden");
+  document.querySelector(".restart-btn").classList.remove("hidden");
+  document.querySelector(".restart-btn").addEventListener("click", restartGame);
 }
 
 //go to the draw screen
 function showDraw() {
   console.log("showDraw()");
   document.querySelector("#draw").classList.remove("hidden");
+  document.querySelector(".restart-btn").classList.remove("hidden");
+  document.querySelector(".restart-btn").addEventListener("click", restartGame);
 }
+
+//restart the game
+// function restartGame() {
+//   console.log("restart");
+//   document.querySelector("#win").classList.add("hidden");
+//   document.querySelector("#lose").classList.add("hidden");
+//   document.querySelector("#draw").classList.add("hidden");
+//   //   document.querySelector("#player1").classList.value = "";
+//   //   document.querySelector("#player2").classList.value = "";
+//   start();
+// }
+//clear classes
